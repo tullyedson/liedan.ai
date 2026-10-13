@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'feral-vault-master',
       name: 'FERAL: Uncensored Lossless Master (MP4 + WAV)',
       price: 3.99,
-      img: 'assets/cyber-liedan1.png',
+      img: 'assets/realism/liedan_feral_corridor_prowl.jpg',
       size: 'Lossless Digital Download',
       quantity: 1
     };
