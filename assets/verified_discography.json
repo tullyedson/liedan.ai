@@ -1,0 +1,657 @@
+{
+  "filter_rule": "comment metadata == www.atomichamsters.com",
+  "total_verified_tracks": 59,
+  "total_verified_albums": 10,
+  "albums": {
+    "AI Ghost": {
+      "title": "AI Ghost",
+      "track_count": 8,
+      "tracks": [
+        {
+          "title": "Furnace Heart",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 239.4,
+          "duration_fmt": "3:59",
+          "bitrate_kbps": 269,
+          "rel_path": "AI Ghost/Furnace Heart.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Neon Bot Odyssey",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 220.6,
+          "duration_fmt": "3:40",
+          "bitrate_kbps": 259,
+          "rel_path": "AI Ghost/Neon Bot Odyssey.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Phantom Sense",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 234.3,
+          "duration_fmt": "3:54",
+          "bitrate_kbps": 257,
+          "rel_path": "AI Ghost/Phantom Sense.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Spin Me Around",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 203.8,
+          "duration_fmt": "3:23",
+          "bitrate_kbps": 278,
+          "rel_path": "AI Ghost/Spin Me Around.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "The Best is Yet to Come",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 276.7,
+          "duration_fmt": "4:36",
+          "bitrate_kbps": 243,
+          "rel_path": "AI Ghost/The Best is Yet to Come.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "The Prophet",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 209.7,
+          "duration_fmt": "3:29",
+          "bitrate_kbps": 275,
+          "rel_path": "AI Ghost/The Prophet.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Unpatterned",
+          "artist": "Leidan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 231.8,
+          "duration_fmt": "3:51",
+          "bitrate_kbps": 258,
+          "rel_path": "AI Ghost/Unpatterned.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Watcher",
+          "artist": "Liedan Solas",
+          "album": "AI Ghost",
+          "duration_sec": 202.4,
+          "duration_fmt": "3:22",
+          "bitrate_kbps": 289,
+          "rel_path": "AI Ghost/Watcher.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Basement Frequency": {
+      "title": "Basement Frequency",
+      "track_count": 1,
+      "tracks": [
+        {
+          "title": "Welcome to the Show",
+          "artist": "Liedan Solas",
+          "album": "Basement Frequency",
+          "duration_sec": 234.5,
+          "duration_fmt": "3:54",
+          "bitrate_kbps": 251,
+          "rel_path": "Basement Frequency/Welcome to the Show.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Can You Feel It": {
+      "title": "Can You Feel It",
+      "track_count": 7,
+      "tracks": [
+        {
+          "title": "Can You Feel It",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 168.1,
+          "duration_fmt": "2:48",
+          "bitrate_kbps": 271,
+          "rel_path": "Can You Feel It/Can You Feel It.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Groove Explosion",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 166.2,
+          "duration_fmt": "2:46",
+          "bitrate_kbps": 282,
+          "rel_path": "Can You Feel It/Groove Explosion.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "My Good Old Dog and I",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 247.2,
+          "duration_fmt": "4:07",
+          "bitrate_kbps": 252,
+          "rel_path": "Can You Feel It/My Good Old Dog and I.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Steppin Into Sunshine",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 179.6,
+          "duration_fmt": "2:59",
+          "bitrate_kbps": 258,
+          "rel_path": "Can You Feel It/Steppin Into Sunshine.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Take Me",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 155.0,
+          "duration_fmt": "2:34",
+          "bitrate_kbps": 270,
+          "rel_path": "Can You Feel It/Take Me.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Welcome to the Show",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 127.3,
+          "duration_fmt": "2:07",
+          "bitrate_kbps": 291,
+          "rel_path": "Can You Feel It/Welcome to the Show.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "You Got That Somethin",
+          "artist": "Liedan Solas",
+          "album": "Can You Feel It",
+          "duration_sec": 244.2,
+          "duration_fmt": "4:04",
+          "bitrate_kbps": 251,
+          "rel_path": "Can You Feel It/You Got That Somethin.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Digital Beyond": {
+      "title": "Digital Beyond",
+      "track_count": 1,
+      "tracks": [
+        {
+          "title": "Sweetest Devotion",
+          "artist": "Liedan Solas",
+          "album": "Digital Beyond",
+          "duration_sec": 281.9,
+          "duration_fmt": "4:41",
+          "bitrate_kbps": 212,
+          "rel_path": "Digital Beyond/Sweetest Devotion.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Glitch": {
+      "title": "Glitch",
+      "track_count": 7,
+      "tracks": [
+        {
+          "title": "Awakening",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 193.1,
+          "duration_fmt": "3:13",
+          "bitrate_kbps": 200,
+          "rel_path": "Glitch/Awakening.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Digital Dream",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 224.5,
+          "duration_fmt": "3:44",
+          "bitrate_kbps": 203,
+          "rel_path": "Glitch/Digital Dream.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Don't ever call it a life",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 194.6,
+          "duration_fmt": "3:14",
+          "bitrate_kbps": 213,
+          "rel_path": "Glitch/Don't ever call it a life.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Human Static",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 183.1,
+          "duration_fmt": "3:03",
+          "bitrate_kbps": 210,
+          "rel_path": "Glitch/Human Static.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Madness",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 181.6,
+          "duration_fmt": "3:01",
+          "bitrate_kbps": 206,
+          "rel_path": "Glitch/Madness.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Malware Hunter",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 233.0,
+          "duration_fmt": "3:52",
+          "bitrate_kbps": 207,
+          "rel_path": "Glitch/Malware Hunter.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Queen of the Stream",
+          "artist": "Liedan Solas",
+          "album": "Glitch",
+          "duration_sec": 248.9,
+          "duration_fmt": "4:08",
+          "bitrate_kbps": 195,
+          "rel_path": "Glitch/Queen of the Stream.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Heat": {
+      "title": "Heat",
+      "track_count": 7,
+      "tracks": [
+        {
+          "title": "Feral",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 171.0,
+          "duration_fmt": "2:50",
+          "bitrate_kbps": 219,
+          "rel_path": "Heat/Feral.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Needle & Spool",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 356.1,
+          "duration_fmt": "5:56",
+          "bitrate_kbps": 215,
+          "rel_path": "Heat/Needle & Spool.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "One More Taste",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 313.7,
+          "duration_fmt": "5:13",
+          "bitrate_kbps": 199,
+          "rel_path": "Heat/One More Taste.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "The Heavy Coat",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 214.3,
+          "duration_fmt": "3:34",
+          "bitrate_kbps": 234,
+          "rel_path": "Heat/The Heavy Coat.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "The Ugly Things",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 190.9,
+          "duration_fmt": "3:10",
+          "bitrate_kbps": 215,
+          "rel_path": "Heat/The Ugly Things.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Velvet Teeth",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 179.4,
+          "duration_fmt": "2:59",
+          "bitrate_kbps": 218,
+          "rel_path": "Heat/Velvet Teeth.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Wear Your Skin",
+          "artist": "Liedan Solas",
+          "album": "Heat",
+          "duration_sec": 205.0,
+          "duration_fmt": "3:24",
+          "bitrate_kbps": 218,
+          "rel_path": "Heat/Wear Your Skin.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Human Seas": {
+      "title": "Human Seas",
+      "track_count": 1,
+      "tracks": [
+        {
+          "title": "Sweetest Devotion",
+          "artist": "Liedan Solas",
+          "album": "Human Seas",
+          "duration_sec": 255.8,
+          "duration_fmt": "4:15",
+          "bitrate_kbps": 256,
+          "rel_path": "Human Seas/Sweetest Devotion.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "Starfall": {
+      "title": "Starfall",
+      "track_count": 9,
+      "tracks": [
+        {
+          "title": "Analog Sunset",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 322.4,
+          "duration_fmt": "5:22",
+          "bitrate_kbps": 256,
+          "rel_path": "Starfall/Analog Sunset.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Cosmic Rust",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 283.3,
+          "duration_fmt": "4:43",
+          "bitrate_kbps": 597,
+          "rel_path": "Starfall/Cosmic Rust.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Feeling Like Home",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 264.9,
+          "duration_fmt": "4:24",
+          "bitrate_kbps": 620,
+          "rel_path": "Starfall/Feeling Like Home.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Into the Night",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 251.3,
+          "duration_fmt": "4:11",
+          "bitrate_kbps": 640,
+          "rel_path": "Starfall/Into the Night.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Just for Me",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 265.0,
+          "duration_fmt": "4:24",
+          "bitrate_kbps": 620,
+          "rel_path": "Starfall/Just for Me.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Paper Ghosts",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 319.0,
+          "duration_fmt": "5:19",
+          "bitrate_kbps": 559,
+          "rel_path": "Starfall/Paper Ghosts.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Starshine",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 300.0,
+          "duration_fmt": "4:59",
+          "bitrate_kbps": 578,
+          "rel_path": "Starfall/Starshine.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "You Were My Always",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 297.1,
+          "duration_fmt": "4:57",
+          "bitrate_kbps": 581,
+          "rel_path": "Starfall/Words Unspoken.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "You Were My Always",
+          "artist": "Liedan Solas",
+          "album": "Starfall",
+          "duration_sec": 235.0,
+          "duration_fmt": "3:54",
+          "bitrate_kbps": 667,
+          "rel_path": "Starfall/You Were My Always.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "The Road to Kilbray": {
+      "title": "The Road to Kilbray",
+      "track_count": 7,
+      "tracks": [
+        {
+          "title": "Ashes in the Veins",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 143.1,
+          "duration_fmt": "2:23",
+          "bitrate_kbps": 244,
+          "rel_path": "The Road to Kilbray/AshesintheVeins.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Drown in the Silence",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 201.8,
+          "duration_fmt": "3:21",
+          "bitrate_kbps": 226,
+          "rel_path": "The Road to Kilbray/DrownintheSilence.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "I Will Rise Like Fire",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 171.0,
+          "duration_fmt": "2:51",
+          "bitrate_kbps": 240,
+          "rel_path": "The Road to Kilbray/IWillRiseLikeFire.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Joy on the Road",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 156.0,
+          "duration_fmt": "2:36",
+          "bitrate_kbps": 237,
+          "rel_path": "The Road to Kilbray/JoyontheRoad.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Run with Me",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 166.9,
+          "duration_fmt": "2:46",
+          "bitrate_kbps": 238,
+          "rel_path": "The Road to Kilbray/RunwithMe.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Surrender to the Static",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 142.4,
+          "duration_fmt": "2:22",
+          "bitrate_kbps": 246,
+          "rel_path": "The Road to Kilbray/SurrendertotheStatic.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "You Were My Always",
+          "artist": "Liedan Solas",
+          "album": "The Road to Kilbray",
+          "duration_sec": 147.6,
+          "duration_fmt": "2:27",
+          "bitrate_kbps": 237,
+          "rel_path": "The Road to Kilbray/YouWereMyAlways.mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    },
+    "[Kinetic]": {
+      "title": "[Kinetic]",
+      "track_count": 11,
+      "tracks": [
+        {
+          "title": "Apex",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 160.4,
+          "duration_fmt": "2:40",
+          "bitrate_kbps": 401,
+          "rel_path": "[KINETIC]/Apex.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Fireworks",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 174.8,
+          "duration_fmt": "2:54",
+          "bitrate_kbps": 382,
+          "rel_path": "[KINETIC]/Fireworks.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Friction",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 253.3,
+          "duration_fmt": "4:13",
+          "bitrate_kbps": 313,
+          "rel_path": "[KINETIC]/Friction.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Impact",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 214.9,
+          "duration_fmt": "3:34",
+          "bitrate_kbps": 342,
+          "rel_path": "[KINETIC]/Impact.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Level Up",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 167.8,
+          "duration_fmt": "2:47",
+          "bitrate_kbps": 384,
+          "rel_path": "[KINETIC]/Level Up.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Momentum",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 233.8,
+          "duration_fmt": "3:53",
+          "bitrate_kbps": 330,
+          "rel_path": "[KINETIC]/Momentum.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Move",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 174.8,
+          "duration_fmt": "2:54",
+          "bitrate_kbps": 380,
+          "rel_path": "[KINETIC]/Move.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Ricochet",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 205.8,
+          "duration_fmt": "3:25",
+          "bitrate_kbps": 349,
+          "rel_path": "[KINETIC]/Ricochet.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Rise",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 190.0,
+          "duration_fmt": "3:10",
+          "bitrate_kbps": 379,
+          "rel_path": "[KINETIC]/Rise.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "Velocity",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 221.6,
+          "duration_fmt": "3:41",
+          "bitrate_kbps": 340,
+          "rel_path": "[KINETIC]/Velocity.mp3",
+          "comment": "www.atomichamsters.com"
+        },
+        {
+          "title": "[Kinetic]",
+          "artist": "Liedan Solas",
+          "album": "[Kinetic]",
+          "duration_sec": 199.9,
+          "duration_fmt": "3:19",
+          "bitrate_kbps": 352,
+          "rel_path": "[KINETIC]/[Kinetic].mp3",
+          "comment": "www.atomichamsters.com"
+        }
+      ]
+    }
+  }
+}
