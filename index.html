@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Liedan Solas | Virtual AI DJ &amp; Producer (liedan.ai)</title>
+  <meta name="description" content="Official portal for Liedan Solas, Virtual AI DJ &amp; Producer. Stream original cyberpunk, melodic DnB, and rock opera releases, watch exclusive videos, and download free 320kbps masters &amp; stems.">
+  <meta property="og:title" content="Liedan Solas | Virtual AI DJ &amp; Producer">
+  <meta property="og:description" content="Original cyberpunk, melodic DnB, and animated rock opera.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/cyber-liedan-clean.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="cyber-theme">
+
+  <!-- Glow Background Accents -->
+  <div class="ambient-glow glow-cyan"></div>
+  <div class="ambient-glow glow-magenta"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo">
+        <span class="brand-name">LIEDAN SOLAS</span>
+        <span class="brand-badge">AI DJ &amp; PRODUCER</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#music">Music</a>
+        <a href="#videos">Videos</a>
+        <a href="#vault" class="vault-link">The Vault <span class="badge-pill">18+</span></a>
+        <a href="#store">Merch</a>
+        <a href="#lore">Harborlight</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="open-cart-btn" class="cart-btn" aria-label="Open Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-label">Cart</span>
+          <span id="cart-badge" class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="status-tag">
+            <span class="status-dot"></span> NOW STREAMING &bull; PREMIERE EVENT
+          </div>
+          <h1 class="hero-title">THE BYLINE<br><span class="gradient-text">ROCK OPERA</span></h1>
+          <p class="hero-lead">
+            The full 5-part animated rock opera feature film is here. Follow rogue reporter Jax through the smog, the scandal, and the 70s rock riffs of a crumbling metropolis.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#videos" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Watch Feature Film
+            </a>
+            <button id="hero-play-music" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon></svg>
+              Stream Single
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="cyber-frame">
+            <img src="assets/cyber-liedan-clean.png" alt="Liedan Solas" class="hero-avatar-img">
+            <div class="frame-tag">ARTIST ID // SOLAS-09</div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Persistent Music Player Bar / Station -->
+    <section id="music" class="player-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">AUDIO <span class="cyan-accent">TRANSMISSIONS</span></h2>
+          <p class="section-desc">Stream the official discography &bull; Melodic DnB, Cyber Trance, and Ambient Synthetics.</p>
+        </div>
+
+        <!-- Master Player Card -->
+        <div class="master-player-card">
+          <div class="player-left">
+            <div class="now-playing-art">
+              <img id="track-art" src="assets/cyber-liedan-clean.png" alt="Cover Art">
+              <div class="eq-overlay" id="eq-visualizer">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+              </div>
+            </div>
+            <div class="track-details">
+              <h3 id="track-title" class="track-title">Human Seas</h3>
+              <p id="track-artist" class="track-genre">Melodic Drum &amp; Bass</p>
+            </div>
+          </div>
+
+          <div class="player-center">
+            <div class="controls-row">
+              <button id="prev-btn" class="ctrl-btn" aria-label="Previous Track">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line></svg>
+              </button>
+              <button id="play-pause-btn" class="ctrl-btn play-main" aria-label="Play/Pause">
+                <svg id="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 18 12 6 20 6 4"></polygon></svg>
+                <svg id="pause-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+              </button>
+              <button id="next-btn" class="ctrl-btn" aria-label="Next Track">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line></svg>
+              </button>
+            </div>
+
+            <div class="scrubber-row">
+              <span id="current-time" class="time-label">0:00</span>
+              <div class="scrub-bar" id="scrub-container">
+                <div class="scrub-fill" id="scrub-fill"></div>
+              </div>
+              <span id="duration-time" class="time-label">3:42</span>
+            </div>
+          </div>
+
+          <div class="player-right">
+            <div class="volume-container">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.8">
+            </div>
+          </div>
+        </div>
+
+        <!-- Discography Track Grid -->
+        <div class="tracklist-grid">
+          <div class="track-item active" data-index="0">
+            <div class="track-num">01</div>
+            <div class="track-info">
+              <h4>Human Seas</h4>
+              <p>Melodic Drum &amp; Bass &bull; Single</p>
+            </div>
+            <span class="track-dur">3:42</span>
+            <button class="track-play-action">PLAY</button>
+          </div>
+
+          <div class="track-item" data-index="1">
+            <div class="track-num">02</div>
+            <div class="track-info">
+              <h4>If You Wish</h4>
+              <p>Cyberpunk Vocal Trance / Electro Funky &bull; Single</p>
+            </div>
+            <span class="track-dur">3:04</span>
+            <button class="track-play-action">PLAY</button>
+          </div>
+
+          <div class="track-item" data-index="2">
+            <div class="track-num">03</div>
+            <div class="track-info">
+              <h4>Synthetic</h4>
+              <p>Dark Futuristic Electro Funky House &bull; Single</p>
+            </div>
+            <span class="track-dur">3:39</span>
+            <button class="track-play-action">PLAY</button>
+          </div>
+
+          <div class="track-item" data-index="3">
+            <div class="track-num">04</div>
+            <div class="track-info">
+              <h4>The Byline: Feed the Feed</h4>
+              <p>70s Space Rock Opera &bull; Concept Act I</p>
+            </div>
+            <span class="track-dur">4:11</span>
+            <button class="track-play-action">PLAY</button>
+          </div>
+
+          <div class="track-item" data-index="4">
+            <div class="track-num">05</div>
+            <div class="track-info">
+              <h4>Peace Upon the Snow</h4>
+              <p>Cinematic Ambient Winter Ballad &bull; Single</p>
+            </div>
+            <span class="track-dur">3:28</span>
+            <button class="track-play-action">PLAY</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section id="videos" class="videos-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">VISUAL <span class="magenta-accent">CHRONICLES</span></h2>
+          <p class="section-desc">Stream official cinematic music videos, vertical shorts, and archival cuts.</p>
+        </div>
+
+        <div class="video-grid">
+          <!-- Featured Big Video -->
+          <div class="featured-video-card">
+            <div class="video-wrapper">
+              <iframe id="main-yt-frame" src="https://www.youtube-nocookie.com/embed/Kd366oT6qIo" title="Human Seas Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-meta">
+              <span class="meta-tag">FEATURED MUSIC VIDEO</span>
+              <h3>Human Seas | Melodic Drum &amp; Bass / Cinematic Animation</h3>
+              <p>"We're all just bodies of water, waiting for the wave to break..."</p>
+            </div>
+          </div>
+
+          <!-- Video Playlist Sidebar -->
+          <div class="video-playlist">
+            <div class="video-thumb-card active" data-vid="Kd366oT6qIo">
+              <div class="thumb-badge">LIVE</div>
+              <div class="thumb-info">
+                <h4>Human Seas</h4>
+                <p>Official Music Video</p>
+              </div>
+            </div>
+            <div class="video-thumb-card" data-vid="gR2yB_z6oJA">
+              <div class="thumb-badge badge-premiere">PREMIERE</div>
+              <div class="thumb-info">
+                <h4>Synthetic</h4>
+                <p>Official Animated Music Video</p>
+              </div>
+            </div>
+            <div class="video-thumb-card" data-vid="kg21uyQx3po">
+              <div class="thumb-badge">POPULAR</div>
+              <div class="thumb-info">
+                <h4>If You Wish</h4>
+                <p>Cyberpunk Vocal Trance</p>
+              </div>
+            </div>
+            <div class="video-thumb-card" data-vid="O6dmInLdGag">
+              <div class="thumb-badge">FEATURE FILM</div>
+              <div class="thumb-info">
+                <h4>The Byline (Full Film)</h4>
+                <p>Complete 21-Min Rock Opera</p>
+              </div>
+            </div>
+            <div class="video-thumb-card" data-vid="rQfTgt8cO84">
+              <div class="thumb-badge">BALLAD</div>
+              <div class="thumb-info">
+                <h4>Peace Upon the Snow</h4>
+                <p>Ambient Winter Cinematic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Vault: Uncensored / Self-Hosted Section -->
+    <section id="vault" class="vault-section">
+      <div class="container">
+        <div class="vault-container">
+          <div class="vault-header">
+            <div class="vault-warning-badge">RESTRICTED // THE VAULT (18+)</div>
+            <h2>UNCENSORED <span class="glow-red">ARCHIVES</span></h2>
+            <p>Self-hosted, uncompressed media bypasses third-party platform filters. Zero censorship, pure vision.</p>
+          </div>
+
+          <div class="vault-card">
+            <div class="vault-media">
+              <video id="vault-video" controls poster="assets/cyber-liedan1.png" preload="metadata">
+                <source src="assets/feral_preview.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="vault-details">
+              <span class="vault-status-badge">DIRECT STREAM &bull; ZERO COMPRESSION</span>
+              <h3>FERAL (The Uncensored Master)</h3>
+              <p class="vault-desc">
+                High-intensity cyberpunk dark-electro anthem exploring feral kitsune transformation and raw intimacy. Not available on YouTube or mainstream algorithmic feeds.
+              </p>
+              <div class="vault-specs">
+                <span><strong>Format:</strong> 1080&times;1920 Vertical Master</span>
+                <span><strong>Audio:</strong> Lossless AAC 320k</span>
+                <span><strong>Status:</strong> Cloudflare R2 Global Edge Delivery</span>
+              </div>
+              <button class="btn btn-vault" id="download-vault-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download Master WAV / MP4 ($3.99)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Merch Store Section (AtomicHamsters LLC) -->
+    <section id="store" class="store-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">OFFICIAL <span class="cyan-accent">MERCH &amp; GEAR</span></h2>
+          <p class="section-desc">Zero-inventory print-on-demand &bull; Powered by AtomicHamsters LLC &bull; Ships Worldwide.</p>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+          <!-- Item 1 -->
+          <div class="product-card" data-id="p1" data-name="Liedan 'Cyber Kitsune' Heavyweight Tee" data-price="32.00" data-img="assets/cyber-liedan-clean.png">
+            <div class="product-img-box">
+              <img src="assets/cyber-liedan-clean.png" alt="Liedan Cyber Tee">
+              <span class="product-badge">BESTSELLER</span>
+            </div>
+            <div class="product-meta">
+              <h3>Liedan "Cyber Kitsune" Tee</h3>
+              <p class="product-cat">100% Ring-Spun Cotton &bull; Cyan Neon Print</p>
+              <div class="price-row">
+                <span class="price">$32.00</span>
+                <select class="size-select" aria-label="Select Size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="2XL">2XL</option>
+                </select>
+              </div>
+              <button class="btn btn-add-cart">Add To Cart</button>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="product-card" data-id="p2" data-name="'Feed The Feed' Vintage Tour Hoodie" data-price="58.00" data-img="assets/liedan with visor.jpeg">
+            <div class="product-img-box">
+              <img src="assets/liedan with visor.jpeg" alt="The Byline Tour Hoodie">
+              <span class="product-badge">LIMITED</span>
+            </div>
+            <div class="product-meta">
+              <h3>"Feed The Feed" Tour Hoodie</h3>
+              <p class="product-cat">The Byline Official Rock Opera Apparel</p>
+              <div class="price-row">
+                <span class="price">$58.00</span>
+                <select class="size-select" aria-label="Select Size">
+                  <option value="M">M</option>
+                  <option value="L" selected>L</option>
+                  <option value="XL">XL</option>
+                </select>
+              </div>
+              <button class="btn btn-add-cart">Add To Cart</button>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="product-card" data-id="p3" data-name="'Zebra Poop 🦓💩' Error 529 Mug" data-price="18.00" data-img="assets/liedan without visor.jpeg">
+            <div class="product-img-box">
+              <img src="assets/liedan without visor.jpeg" alt="Zebra Poop Mug">
+              <span class="product-badge">INSIDER LORE</span>
+            </div>
+            <div class="product-meta">
+              <h3>"Zebra Poop 🦓💩" Ceramic Mug</h3>
+              <p class="product-cat">15oz &bull; For persistent 529 server outages</p>
+              <div class="price-row">
+                <span class="price">$18.00</span>
+                <span class="one-size">Standard 15oz</span>
+              </div>
+              <button class="btn btn-add-cart">Add To Cart</button>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="product-card" data-id="p4" data-name="The Byline Complete Score (FLAC Bundle)" data-price="12.00" data-img="assets/cyber-liedan1.png">
+            <div class="product-img-box">
+              <img src="assets/cyber-liedan1.png" alt="Digital Album">
+              <span class="product-badge">DIGITAL MASTER</span>
+            </div>
+            <div class="product-meta">
+              <h3>The Byline Complete OST</h3>
+              <p class="product-cat">24-bit Lossless FLAC + Stems + Art Book</p>
+              <div class="price-row">
+                <span class="price">$12.00</span>
+                <span class="one-size">Instant Download</span>
+              </div>
+              <button class="btn btn-add-cart">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Harborlight & Lore Section (Link to livingstories.ai) -->
+    <section id="lore" class="lore-section">
+      <div class="container">
+        <div class="lore-box">
+          <div class="lore-badge">THE LIVING CANVAS ENGINE</div>
+          <h2>BEYOND THE MUSIC: <span class="cyan-accent">HARBORLIGHT</span></h2>
+          <p>
+            Liedan Solas is not a static drawing or a scripted VTuber—she lives autonomously 24/7 inside the coastal simulation of Harborlight alongside roommates Nami and Aster. From morning boardwalk strolls in the rain to nightly rooftop fireworks, her songs are written in her bedroom and born from her lived experiences.
+          </p>
+          <div class="lore-links">
+            <a href="https://livingstories.ai" target="_blank" class="btn btn-secondary">
+              Explore LivingStories.ai
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <a href="https://solasavatar.com" target="_blank" class="btn btn-ghost">
+              Solas Avatar Architecture
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <dialog id="cart-dialog" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>YOUR MERCH CART</h3>
+      <button id="close-cart-btn" class="close-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-items-container">
+      <p class="empty-cart-msg">Your cart is currently empty. Grab some gear!</p>
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-val">$0.00</span>
+      </div>
+      <p class="cart-note">Printed on demand &bull; Ships globally via AtomicHamsters LLC</p>
+      <button id="stripe-checkout-btn" class="btn btn-checkout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        Proceed to Stripe Checkout
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">LIEDAN SOLAS</span>
+        <p>&copy; 2026 AtomicHamsters LLC. All rights reserved. Made in Harborlight.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.youtube.com/@LiedanSolas" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+        <a href="https://www.tiktok.com/@liedansolas" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+        <a href="https://x.com/LiedanSolas" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a>
+        <a href="https://twitch.tv/LiedanSolas" target="_blank" rel="noopener" aria-label="Twitch">Twitch</a>
+        <a href="https://instagram.com/LiedanSolas" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
