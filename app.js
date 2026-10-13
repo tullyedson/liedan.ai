@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Human Seas',
       genre: 'Melodic Drum & Bass',
       src: 'assets/human-seas_s104.mp3',
-      art: 'assets/realism/liedan_face_macro_cyan_eyes.jpg',
+      art: 'assets/realism/liedan_dj_human_seas_cover_1x1.jpg',
       duration: '3:42'
     },
     {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'The Byline: Feed the Feed',
       genre: '70s Space Rock Opera',
       src: '', // Remote fallback or YouTube
-      art: 'assets/liedan without visor.jpeg',
+      art: 'assets/realism/liedan_face_macro_cyan_eyes.jpg',
       duration: '4:11'
     },
     {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Peace Upon the Snow',
       genre: 'Cinematic Ambient Winter Ballad',
       src: '',
-      art: 'assets/cyber-liedan-clean.png',
+      art: 'assets/realism/liedan_sleeping_sunlight_photoreal.jpg',
       duration: '3:28'
     }
   ];
