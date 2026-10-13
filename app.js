@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Human Seas',
       genre: 'Melodic Drum & Bass',
       src: 'assets/human-seas_s104.mp3',
-      art: 'assets/cyber-liedan-clean.png',
+      art: 'assets/realism/liedan_face_macro_cyan_eyes.jpg',
       duration: '3:42'
     },
     {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'If You Wish',
       genre: 'Cyberpunk Vocal Trance / Electro Funky',
       src: 'assets/If You Wish.mp3',
-      art: 'assets/liedan with visor.jpeg',
+      art: 'assets/realism/liedan_cyber_gauntlet_portrait.png',
       duration: '3:04'
     },
     {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Synthetic',
       genre: 'Dark Futuristic Electro Funky House',
       src: 'assets/Synthetic.mp3',
-      art: 'assets/cyber-liedan1.png',
+      art: 'assets/realism/liedan_over_shoulder_fox_tail.png',
       duration: '3:39'
     },
     {
