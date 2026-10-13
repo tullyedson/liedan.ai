@@ -115,6 +115,7 @@ body.cyber-theme {
   gap: 0.65rem;
   text-decoration: none;
   color: var(--text-main);
+  flex-shrink: 0;
 }
 
 .brand-chibi-icon {
@@ -135,34 +136,38 @@ body.cyber-theme {
 
 .brand-text-block {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  line-height: 1.1;
 }
 
 .brand-name {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   letter-spacing: 0.08em;
   color: var(--accent-cyan);
   text-shadow: 0 0 12px var(--accent-cyan-glow);
+  white-space: nowrap;
 }
 
 .brand-badge {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  padding: 0.15rem 0.45rem;
+  padding: 0.1rem 0.4rem;
   border-radius: 4px;
   background: rgba(0, 240, 255, 0.15);
   border: 1px solid var(--border-cyan);
   color: var(--accent-cyan);
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.35rem;
 }
 
 .nav-links a {
@@ -170,8 +175,11 @@ body.cyber-theme {
   color: var(--text-muted);
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   letter-spacing: 0.04em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
   transition: color var(--transition-fast), text-shadow var(--transition-fast);
 }
 
@@ -1468,3 +1476,448 @@ body.cyber-theme {
   opacity: 1;
 }
 
+
+/* ==========================================================================
+   V2 OVERHAUL: REALISM HERO BANNER, 9-ALBUM DISCOGRAPHY EXPLORER & GALLERY
+   ========================================================================== */
+
+.badge-cyan {
+  font-size: 0.65rem;
+  background: rgba(0, 240, 255, 0.16);
+  border: 1px solid var(--border-cyan);
+  color: var(--accent-cyan);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.25rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.yt-sub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #fff;
+  background: rgba(255, 0, 51, 0.18);
+  border: 1px solid rgba(255, 0, 51, 0.45);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.yt-sub-pill:hover {
+  background: #ff0033;
+  border-color: #ff0033;
+  box-shadow: 0 0 14px rgba(255, 0, 51, 0.5);
+}
+
+/* Wide Morning Sunlight Banner Strip */
+.hero-banner-strip {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-cyan);
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.hero-banner-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: brightness(0.88) contrast(1.06);
+  transition: transform 0.8s ease;
+}
+
+.hero-banner-strip:hover .hero-banner-bg {
+  transform: scale(1.03);
+}
+
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 9, 14, 0.82) 0%, rgba(7, 9, 14, 0.25) 50%, rgba(7, 9, 14, 0.82) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.banner-tag,
+.banner-freq {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-cyan);
+  background: rgba(5, 8, 14, 0.78);
+  border: 1px solid var(--border-cyan);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+}
+
+.hero-stats-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: rgba(16, 22, 33, 0.8);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-cyan);
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-val {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Video Playlist Thumbnails */
+.video-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.yt-direct-link {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+.yt-direct-link:hover {
+  text-decoration: underline;
+}
+
+.video-playlist {
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.video-playlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.video-playlist::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: 3px;
+}
+
+.video-thumb-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem;
+}
+
+.v-thumb-img {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.thumb-badge.badge-cyan {
+  color: var(--accent-cyan);
+}
+
+/* Verified Discography Explorer */
+.discog-header-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.catalog-search-input {
+  background: rgba(16, 22, 33, 0.9);
+  border: 1px solid var(--border-cyan);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius-sm);
+  width: min(100%, 300px);
+  outline: none;
+  transition: box-shadow var(--transition-fast);
+}
+
+.catalog-search-input:focus {
+  box-shadow: 0 0 14px var(--accent-cyan-glow);
+}
+
+.album-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.album-tab {
+  background: rgba(16, 22, 33, 0.75);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.album-tab:hover {
+  color: var(--text-main);
+  border-color: var(--border-cyan);
+}
+
+.album-tab.active {
+  background: var(--accent-cyan);
+  color: #03080d;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 14px var(--accent-cyan-glow);
+}
+
+.tab-count {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.active-album-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.album-banner-art {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-cyan);
+  flex-shrink: 0;
+}
+
+.album-banner-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-verified-pill {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.album-banner-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.album-banner-info p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.track-album-pill {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.track-play-action.has-video {
+  background: rgba(0, 240, 255, 0.14);
+  border-color: var(--border-cyan);
+  color: var(--accent-cyan);
+}
+
+.track-verified-tag {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  justify-self: end;
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+}
+
+.empty-catalog-msg {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+}
+
+/* Photorealistic Identity Gallery */
+.gallery-section {
+  padding-block: 5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.realism-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.realism-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #05070b;
+  aspect-ratio: 4 / 5;
+}
+
+.realism-card.card-wide {
+  grid-column: span 2;
+  aspect-ratio: 16 / 10;
+}
+
+.realism-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.realism-card:hover img {
+  transform: scale(1.04);
+}
+
+.realism-card figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(5, 7, 12, 0.92) 0%, transparent 100%);
+}
+
+.fig-tag {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  color: var(--accent-cyan);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.realism-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Vault Poster Clean Replacement */
+.vault-media {
+  position: relative;
+}
+
+.vault-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vault-poster-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.35rem 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--accent-magenta);
+  color: var(--accent-magenta);
+  border-radius: 4px;
+}
+
+.vault-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .realism-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .realism-card.card-wide {
+    grid-column: span 1;
+    aspect-ratio: 16 / 9;
+  }
+  .active-album-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-banner-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+}

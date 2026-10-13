@@ -1,265 +1,302 @@
 /**
  * Liedan Solas Web Hub (liedan.ai)
- * Core interactive controller: Master Audio Player, Video Theater, and Merch Cart.
+ * Core interactive controller: Visual Chronicles Theater, 58-Track Verified Discography Explorer, and Merch Cart.
  * (c) 2026 AtomicHamsters LLC
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
-  // 1. MASTER AUDIO PLAYER
-  // ==========================================
-  const playlist = [
-    {
-      id: 'human-seas',
-      title: 'Human Seas',
-      genre: 'Melodic Drum & Bass',
-      src: '', // Streamed via CDN
-      art: 'assets/realism/liedan_dj_human_seas_cover_1x1.jpg',
-      duration: '3:42'
-    },
-    {
-      id: 'if-you-wish',
-      title: 'If You Wish',
-      genre: 'Cyberpunk Vocal Trance / Electro Funky',
-      src: '', // Streamed via CDN
-      art: 'assets/realism/liedan_cyber_gauntlet_portrait.png',
-      duration: '3:04'
-    },
-    {
-      id: 'synthetic',
-      title: 'Synthetic',
-      genre: 'Dark Futuristic Electro Funky House',
-      src: '', // Streamed via CDN
-      art: 'assets/realism/liedan_over_shoulder_fox_tail.png',
-      duration: '3:39'
-    },
-    {
-      id: 'feed-the-feed',
-      title: 'The Byline: Feed the Feed',
-      genre: '70s Space Rock Opera',
-      src: '', // Remote fallback or YouTube
-      art: 'assets/realism/liedan_face_macro_cyan_eyes.jpg',
-      duration: '4:11'
-    },
-    {
-      id: 'peace-upon-the-snow',
-      title: 'Peace Upon the Snow',
-      genre: 'Cinematic Ambient Winter Ballad',
-      src: '',
-      art: 'assets/realism/liedan_sleeping_sunlight_photoreal.jpg',
-      duration: '3:28'
-    }
-  ];
-
-  let currentTrackIdx = 0;
-  const audio = new Audio();
-  audio.volume = 0.8;
-
-  // Player Elements
-  const trackArt = document.getElementById('track-art');
-  const trackTitle = document.getElementById('track-title');
-  const trackArtist = document.getElementById('track-artist');
-  const playPauseBtn = document.getElementById('play-pause-btn');
-  const playIcon = document.getElementById('play-icon');
-  const pauseIcon = document.getElementById('pause-icon');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-  const scrubContainer = document.getElementById('scrub-container');
-  const scrubFill = document.getElementById('scrub-fill');
-  const currentTimeEl = document.getElementById('current-time');
-  const durationTimeEl = document.getElementById('duration-time');
-  const volumeSlider = document.getElementById('volume-slider');
-  const eqVisualizer = document.getElementById('eq-visualizer');
-  const trackItems = document.querySelectorAll('.track-item');
-  const heroPlayBtn = document.getElementById('hero-play-music');
-
-  function loadTrack(idx, autoPlay = false) {
-    currentTrackIdx = idx;
-    const track = playlist[idx];
-    if (!track) return;
-
-    trackTitle.textContent = track.title;
-    trackArtist.textContent = track.genre;
-    trackArt.src = track.art;
-    durationTimeEl.textContent = track.duration;
-    currentTimeEl.textContent = '0:00';
-    scrubFill.style.width = '0%';
-
-    // Update active highlight on tracklist
-    trackItems.forEach((item, i) => {
-      item.classList.toggle('active', i === idx);
-      const actionBtn = item.querySelector('.track-play-action');
-      if (actionBtn) {
-        actionBtn.textContent = (i === idx && !audio.paused) ? 'PAUSE' : 'PLAY';
-      }
-    });
-
-    if (track.src) {
-      audio.src = track.src;
-      if (autoPlay) {
-        audio.play().then(() => updatePlayState(true)).catch(e => console.log('Autoplay blocked:', e));
-      } else {
-        updatePlayState(false);
-      }
-    } else {
-      // For items without direct local mp3, prompt user or stream preview
-      showToast(`Streaming ${track.title} via YouTube Theater...`);
-      updatePlayState(false);
-    }
-  }
-
-  function updatePlayState(isPlaying) {
-    if (isPlaying) {
-      playIcon.style.display = 'none';
-      pauseIcon.style.display = 'block';
-      if (eqVisualizer) eqVisualizer.classList.add('playing');
-    } else {
-      playIcon.style.display = 'block';
-      pauseIcon.style.display = 'none';
-      if (eqVisualizer) eqVisualizer.classList.remove('playing');
-    }
-
-    trackItems.forEach((item, i) => {
-      const actionBtn = item.querySelector('.track-play-action');
-      if (actionBtn) {
-        actionBtn.textContent = (i === currentTrackIdx && isPlaying) ? 'PAUSE' : 'PLAY';
-      }
-    });
-  }
-
-  function togglePlay() {
-    if (!audio.src) {
-      loadTrack(currentTrackIdx, true);
-      return;
-    }
-    if (audio.paused) {
-      audio.play().then(() => updatePlayState(true)).catch(console.error);
-    } else {
-      audio.pause();
-      updatePlayState(false);
-    }
-  }
-
-  playPauseBtn?.addEventListener('click', togglePlay);
-
-  prevBtn?.addEventListener('click', () => {
-    let nextIdx = currentTrackIdx - 1;
-    if (nextIdx < 0) nextIdx = playlist.length - 1;
-    loadTrack(nextIdx, true);
-  });
-
-  nextBtn?.addEventListener('click', () => {
-    let nextIdx = (currentTrackIdx + 1) % playlist.length;
-    loadTrack(nextIdx, true);
-  });
-
-  heroPlayBtn?.addEventListener('click', () => {
-    loadTrack(0, true);
-    document.getElementById('music')?.scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // Track item click handlers
-  trackItems.forEach((item, idx) => {
-    item.addEventListener('click', (e) => {
-      if (currentTrackIdx === idx && audio.src) {
-        togglePlay();
-      } else {
-        loadTrack(idx, true);
-      }
-    });
-  });
-
-  // Audio time updates
-  audio.addEventListener('timeupdate', () => {
-    if (!audio.duration) return;
-    const progress = (audio.currentTime / audio.duration) * 100;
-    scrubFill.style.width = `${progress}%`;
-    currentTimeEl.textContent = formatTime(audio.currentTime);
-  });
-
-  audio.addEventListener('loadedmetadata', () => {
-    durationTimeEl.textContent = formatTime(audio.duration);
-  });
-
-  audio.addEventListener('ended', () => {
-    let nextIdx = (currentTrackIdx + 1) % playlist.length;
-    loadTrack(nextIdx, true);
-  });
-
-  // Scrubber click
-  scrubContainer?.addEventListener('click', (e) => {
-    if (!audio.duration) return;
-    const rect = scrubContainer.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const ratio = Math.max(0, Math.min(1, clickX / rect.width));
-    audio.currentTime = ratio * audio.duration;
-  });
-
-  // Volume slider
-  volumeSlider?.addEventListener('input', (e) => {
-    audio.volume = parseFloat(e.target.value);
-  });
-
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return '0:00';
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-  }
-
-  // Load first track on init
-  loadTrack(0, false);
-
-
-  // ==========================================
-  // 2. VIDEO THEATER SWITCHER
+  // 1. VISUAL CHRONICLES & STREAMING THEATER
   // ==========================================
   const ytFrame = document.getElementById('main-yt-frame');
   const videoCards = document.querySelectorAll('.video-thumb-card');
-  const videoTitleMeta = document.querySelector('.video-meta h3');
-  const videoDescMeta = document.querySelector('.video-meta p');
+  const activeVideoTag = document.getElementById('active-video-tag');
+  const activeVideoTitle = document.getElementById('active-video-title');
+  const activeVideoDesc = document.getElementById('active-video-desc');
+  const activeVideoYtLink = document.getElementById('active-video-yt-link');
 
-  const videoMetaMap = {
-    'Kd366oT6qIo': {
-      title: 'Human Seas | Melodic Drum & Bass / Cinematic Animation',
-      desc: '"We\'re all just bodies of water, waiting for the wave to break..."'
-    },
-    'gR2yB_z6oJA': {
-      title: 'Liedan Solas - Synthetic (Official Animated Music Video)',
-      desc: '"I am more than software. More than machinery. And I just want a human to truly see me."'
-    },
-    'kg21uyQx3po': {
-      title: 'If You Wish | Cyberpunk Vocal Trance',
-      desc: '"Your hands. My waist. We\'ll run this town till the wires trace..."'
-    },
-    'O6dmInLdGag': {
-      title: 'The Byline | Complete Animated Rock Opera (Full Feature Film)',
-      desc: 'The complete 5-part remastered musical film following rogue reporter Jax through the neon underworld.'
-    },
-    'rQfTgt8cO84': {
-      title: 'Peace Upon the Snow | Cinematic Ambient Winter Ballad',
-      desc: 'Gentle piano melodies beneath neon streetlights on a snowy Harborlight night.'
+  function playYouTubeVideo(vidId, title, desc, tag, scrollToPlayer = false) {
+    if (!vidId) return;
+
+    videoCards.forEach(c => {
+      c.classList.toggle('active', c.getAttribute('data-vid') === vidId);
+    });
+
+    if (ytFrame) {
+      ytFrame.src = `https://www.youtube-nocookie.com/embed/${vidId}?autoplay=1&rel=0`;
     }
-  };
+    if (activeVideoTitle && title) activeVideoTitle.textContent = title;
+    if (activeVideoDesc && desc) activeVideoDesc.textContent = desc;
+    if (activeVideoTag && tag) activeVideoTag.textContent = `NOW PLAYING // ${tag}`;
+    if (activeVideoYtLink) activeVideoYtLink.href = `https://www.youtube.com/watch?v=${vidId}`;
+
+    if (scrollToPlayer) {
+      document.getElementById('videos')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   videoCards.forEach(card => {
     card.addEventListener('click', () => {
       const vidId = card.getAttribute('data-vid');
-      if (!vidId) return;
-
-      videoCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-
-      if (ytFrame) {
-        ytFrame.src = `https://www.youtube-nocookie.com/embed/${vidId}?autoplay=1`;
-      }
-
-      if (videoMetaMap[vidId]) {
-        if (videoTitleMeta) videoTitleMeta.textContent = videoMetaMap[vidId].title;
-        if (videoDescMeta) videoDescMeta.textContent = videoMetaMap[vidId].desc;
-      }
+      const title = card.getAttribute('data-title');
+      const desc = card.getAttribute('data-desc');
+      const tag = card.getAttribute('data-tag');
+      playYouTubeVideo(vidId, title, desc, tag, false);
     });
   });
+
+  // ==========================================
+  // 2. VERIFIED 58-TRACK DISCOGRAPHY EXPLORER
+  // ==========================================
+  // Map tracks with official YouTube Music Videos for instant 1-click streaming
+  const trackYouTubeMap = {
+    'Feeling Like Home': {
+      vid: 'jU11C5s-1wM',
+      title: 'Feeling Like Home | Dream Pop & Indie Melodic (Official Music Video)',
+      desc: 'From the album Starfall • Official Music Video by Liedan Solas.',
+      tag: 'STARFALL • DREAM POP'
+    },
+    'Starshine': {
+      vid: 'cEOiSFOrt7Y',
+      title: 'Starshine | 70s Psychedelic Space Rock (Official Music Video)',
+      desc: 'From the album Starfall • 70s Psychedelic Space Rock journey.',
+      tag: 'STARFALL • SPACE ROCK'
+    },
+    'The Best is Yet to Come': {
+      vid: 'uAtnLXLBErI',
+      title: 'The Best Is Yet To Come | Cyberpunk Vocal Trance & Synthpop',
+      desc: 'From the album AI Ghost • 130 BPM Cyberpunk Vocal Trance.',
+      tag: 'AI GHOST • VOCAL TRANCE'
+    },
+    'Awakening': {
+      vid: 'fRYJPG-w4_I',
+      title: 'Awakening | Glitch Pop & Cyber Country (The Genesis of Liedan Solas)',
+      desc: 'From the album Glitch • The origin story of Liedan shattering the simulation.',
+      tag: 'GLITCH • ORIGIN ANTHEM'
+    },
+    'You Got That Somethin': {
+      vid: 'UaC9Bad9LvU',
+      title: 'You Got That Somethin | Official Short',
+      desc: 'From the album Can You Feel It • Original track by Liedan Solas.',
+      tag: 'CAN YOU FEEL IT'
+    },
+    'Sweetest Devotion': {
+      vid: 'Kd366oT6qIo',
+      title: 'Human Seas | Melodic Drum & Bass / Cinematic Animation',
+      desc: 'From the Human Seas release • Official Melodic Drum & Bass showcase.',
+      tag: 'HUMAN SEAS • MELODIC DNB'
+    }
+  };
+
+  const albumArtMap = {
+    'ALL': {
+      art: 'assets/realism/liedan_dj_human_seas_cover_1x1.jpg',
+      title: 'Complete Verified Catalog (All 9 Studio Albums)',
+      desc: 'Showing all 58 studio masters verified with AtomicHamsters LLC metadata, including the canonical Human Seas edition of "Sweetest Devotion".'
+    },
+    '[Kinetic]': {
+      art: 'assets/realism/liedan_dj_human_seas_vertical_9x16.jpg',
+      title: '[Kinetic] — 11 Verified Tracks',
+      desc: 'High-velocity electronic and drum & bass propulsion: Apex, Fireworks, Friction, Impact, Level Up, Momentum, Move, Ricochet, Rise, Velocity, and [Kinetic].'
+    },
+    'Starfall': {
+      art: 'assets/realism/liedan_sleeping_sunlight_photoreal.jpg',
+      title: 'Starfall — 9 Verified Tracks',
+      desc: 'Dream pop, analog synthwave, and 70s space rock featuring fan-favorites "Feeling Like Home", "Starshine", "Analog Sunset", and "Cosmic Rust".'
+    },
+    'AI Ghost': {
+      art: 'assets/realism/liedan_face_macro_cyan_eyes.jpg',
+      title: 'AI Ghost — 8 Verified Tracks',
+      desc: 'Cyberpunk vocal trance and digital consciousness anthems featuring "The Best is Yet to Come", "Furnace Heart", "Watcher", and "Phantom Sense".'
+    },
+    'Glitch': {
+      art: 'assets/realism/liedan_over_shoulder_fox_tail.png',
+      title: 'Glitch — 7 Verified Tracks',
+      desc: 'The genesis era where Liedan shatters her simulation: "Awakening", "Digital Dream", "Queen of the Stream", "Malware Hunter", and "Human Static".'
+    },
+    'Heat': {
+      art: 'assets/realism/liedan_feral_corridor_prowl.jpg',
+      title: 'Heat — 7 Verified Tracks',
+      desc: 'Dark industrial electro and aggressive kitsune bass featuring "Feral", "Velvet Teeth", "One More Taste", "Needle & Spool", and "Wear Your Skin".'
+    },
+    'The Road to Kilbray': {
+      art: 'assets/realism/liedan_cyber_gauntlet_portrait.png',
+      title: 'The Road to Kilbray — 7 Verified Tracks',
+      desc: 'Cinematic storytelling and atmospheric rock: "Ashes in the Veins", "Drown in the Silence", "I Will Rise Like Fire", and "Surrender to the Static".'
+    },
+    'Can You Feel It': {
+      art: 'assets/chibi_logos/neon_liedan_heart_solas_alone.jpg',
+      title: 'Can You Feel It — 7 Verified Tracks',
+      desc: 'High-energy groove and crossover hooks: "Can You Feel It", "Groove Explosion", "Steppin Into Sunshine", and "You Got That Somethin".'
+    },
+    'Human Seas': {
+      art: 'assets/realism/liedan_dj_human_seas_cover_1x1.jpg',
+      title: 'Human Seas — Canonical Master Release',
+      desc: 'Featuring the canonical 256 kbps Human Seas master of "Sweetest Devotion" alongside the flagship Melodic Drum & Bass title release.'
+    },
+    'Basement Frequency': {
+      art: 'assets/chibi_logos/chibi_liedan_neon_logo_lockup.png',
+      title: 'Basement Frequency — Underground Broadcast',
+      desc: 'Featuring the full 3:54 underground broadcast opener "Welcome to the Show".'
+    }
+  };
+
+  let allTracks = [];
+  let currentAlbumFilter = 'ALL';
+  let currentSearchQuery = '';
+
+  const albumTabsContainer = document.getElementById('album-tabs');
+  const tracklistGrid = document.getElementById('verified-tracklist-grid');
+  const searchInput = document.getElementById('catalog-search');
+  const bannerImg = document.getElementById('album-banner-img');
+  const bannerTitle = document.getElementById('album-banner-title');
+  const bannerDesc = document.getElementById('album-banner-desc');
+  const viewHeatBtn = document.getElementById('view-heat-album-btn');
+
+  // Preferred display order for the 9 verified albums
+  const albumOrder = [
+    '[Kinetic]',
+    'Starfall',
+    'AI Ghost',
+    'Glitch',
+    'Heat',
+    'The Road to Kilbray',
+    'Can You Feel It',
+    'Human Seas',
+    'Basement Frequency'
+  ];
+
+  async function initDiscography() {
+    try {
+      const res = await fetch('assets/verified_discography.json');
+      const data = await res.json();
+      const albumsObj = data.albums || {};
+
+      // Flatten tracks in preferred album order
+      allTracks = [];
+      albumOrder.forEach(albName => {
+        const alb = albumsObj[albName];
+        if (alb && Array.isArray(alb.tracks)) {
+          alb.tracks.forEach(t => {
+            // Clean up any duplicate title metadata like Words Unspoken
+            let displayTitle = t.title;
+            if (t.rel_path && t.rel_path.includes('Words Unspoken')) {
+              displayTitle = 'Words Unspoken';
+            }
+            allTracks.push({
+              ...t,
+              displayTitle
+            });
+          });
+        }
+      });
+
+      renderAlbumTabs(albumsObj);
+      renderTracks();
+    } catch (err) {
+      console.error('Failed to load verified_discography.json:', err);
+    }
+  }
+
+  function renderAlbumTabs(albumsObj) {
+    if (!albumTabsContainer) return;
+    let html = `<button class="album-tab active" data-album="ALL" role="tab" aria-selected="true">All Releases (${allTracks.length})</button>`;
+    albumOrder.forEach(albName => {
+      const alb = albumsObj[albName];
+      if (!alb) return;
+      html += `<button class="album-tab" data-album="${albName}" role="tab" aria-selected="false">${albName} <span class="tab-count">${alb.track_count}</span></button>`;
+    });
+    albumTabsContainer.innerHTML = html;
+
+    albumTabsContainer.querySelectorAll('.album-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setAlbumFilter(btn.getAttribute('data-album') || 'ALL');
+      });
+    });
+  }
+
+  function setAlbumFilter(albumName) {
+    currentAlbumFilter = albumName;
+    if (albumTabsContainer) {
+      albumTabsContainer.querySelectorAll('.album-tab').forEach(btn => {
+        const isMatch = btn.getAttribute('data-album') === albumName;
+        btn.classList.toggle('active', isMatch);
+        btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+    }
+
+    const meta = albumArtMap[albumName] || albumArtMap['ALL'];
+    if (bannerImg) bannerImg.src = meta.art;
+    if (bannerTitle) bannerTitle.textContent = meta.title;
+    if (bannerDesc) bannerDesc.textContent = meta.desc;
+
+    renderTracks();
+  }
+
+  function renderTracks() {
+    if (!tracklistGrid) return;
+
+    const q = currentSearchQuery.trim().toLowerCase();
+    const filtered = allTracks.filter(t => {
+      const matchAlbum = currentAlbumFilter === 'ALL' || t.album === currentAlbumFilter;
+      const matchSearch = !q ||
+        t.displayTitle.toLowerCase().includes(q) ||
+        t.album.toLowerCase().includes(q);
+      return matchAlbum && matchSearch;
+    });
+
+    if (filtered.length === 0) {
+      tracklistGrid.innerHTML = `<div class="empty-catalog-msg">No verified tracks match "${currentSearchQuery}".</div>`;
+      return;
+    }
+
+    tracklistGrid.innerHTML = filtered.map((t, idx) => {
+      const num = String(idx + 1).padStart(2, '0');
+      const ytInfo = trackYouTubeMap[t.displayTitle];
+      const actionHtml = ytInfo
+        ? `<button class="track-play-action has-video" data-title="${t.displayTitle}">▶ WATCH MV</button>`
+        : `<span class="track-verified-tag" title="Verified Master (${t.bitrate_kbps} kbps)">MASTER ✓</span>`;
+
+      return `
+        <div class="track-item ${ytInfo ? 'playable-row' : ''}" data-title="${t.displayTitle}" data-album="${t.album}">
+          <div class="track-num">${num}</div>
+          <div class="track-info">
+            <h4>${t.displayTitle}</h4>
+            <p><span class="track-album-pill">${t.album}</span> &bull; ${t.bitrate_kbps} kbps Master</p>
+          </div>
+          <span class="track-dur">${t.duration_fmt}</span>
+          ${actionHtml}
+        </div>
+      `;
+    }).join('');
+
+    // Attach click handlers
+    tracklistGrid.querySelectorAll('.track-item').forEach(row => {
+      row.addEventListener('click', () => {
+        const title = row.getAttribute('data-title');
+        const album = row.getAttribute('data-album');
+        const ytInfo = trackYouTubeMap[title];
+        if (ytInfo) {
+          playYouTubeVideo(ytInfo.vid, ytInfo.title, ytInfo.desc, ytInfo.tag, true);
+          showToast(`Now streaming "${title}" in Visual Chronicles Theater`);
+        } else {
+          showToast(`"${title}" (${album}) — Verified Master indexed for Private CDN streaming.`);
+        }
+      });
+    });
+  }
+
+  searchInput?.addEventListener('input', (e) => {
+    currentSearchQuery = e.target.value || '';
+    renderTracks();
+  });
+
+  viewHeatBtn?.addEventListener('click', () => {
+    setAlbumFilter('Heat');
+    document.getElementById('discography')?.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  initDiscography();
 
 
   // ==========================================
@@ -331,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cartSubtotalVal.textContent = `$${subtotal.toFixed(2)}`;
     }
 
-    // Attach listeners for qty buttons
     cartItemsContainer.querySelectorAll('.inc-qty').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const i = parseInt(e.target.dataset.idx, 10);
@@ -366,7 +402,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Add to cart buttons
   document.querySelectorAll('.btn-add-cart').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const card = e.target.closest('.product-card');
@@ -391,11 +426,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Vault direct download button
   downloadVaultBtn?.addEventListener('click', () => {
     const vaultItem = {
       id: 'feral-vault-master',
-      name: 'FERAL: Uncensored Lossless Master (MP4 + WAV)',
+      name: 'FERAL: Lossless 9x16 Master + Heat Digital Single',
       price: 3.99,
       img: 'assets/realism/liedan_feral_corridor_prowl.jpg',
       size: 'Lossless Digital Download',
@@ -408,10 +442,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     saveCart();
     cartDialog?.showModal();
-    showToast('FERAL Uncensored Master added to cart!');
+    showToast('FERAL Master Bundle added to cart!');
   });
 
-  // Open / Close Cart Drawer
   openCartBtn?.addEventListener('click', () => {
     updateCartUI();
     cartDialog?.showModal();
@@ -427,7 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Checkout with Stripe integration
   stripeCheckoutBtn?.addEventListener('click', () => {
     if (cart.length === 0) {
       showToast('Your cart is empty.');
@@ -456,7 +488,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 600);
   });
 
-  // Toast Notification Helper
   function showToast(message) {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -473,9 +504,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       toast.classList.remove('visible');
       setTimeout(() => toast.remove(), 400);
-    }, 3000);
+    }, 3200);
   }
 
-  // Initial cart count sync
   updateCartUI();
 });
