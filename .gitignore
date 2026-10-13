@@ -2,3 +2,12 @@
 Thumbs.db
 *.tmp
 music/
+
+# Media Assets (Streamed via CDN - NEVER commit raw audio/video to public git)
+*.mp3
+*.mp4
+*.wav
+*.flac
+*.m4a
+*.aac
+*.ogg
