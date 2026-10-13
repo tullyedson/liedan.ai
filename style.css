@@ -1057,6 +1057,10 @@ body.cyber-theme {
   flex-direction: column;
 }
 
+.cart-drawer:not([open]) {
+  display: none !important;
+}
+
 .cart-drawer::backdrop {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
