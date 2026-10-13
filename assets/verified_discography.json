@@ -1,7 +1,7 @@
 {
   "filter_rule": "comment metadata == www.atomichamsters.com",
-  "total_verified_tracks": 59,
-  "total_verified_albums": 10,
+  "total_verified_tracks": 58,
+  "total_verified_albums": 9,
   "albums": {
     "AI Ghost": {
       "title": "AI Ghost",
@@ -177,22 +177,6 @@
           "duration_fmt": "4:04",
           "bitrate_kbps": 251,
           "rel_path": "Can You Feel It/You Got That Somethin.mp3",
-          "comment": "www.atomichamsters.com"
-        }
-      ]
-    },
-    "Digital Beyond": {
-      "title": "Digital Beyond",
-      "track_count": 1,
-      "tracks": [
-        {
-          "title": "Sweetest Devotion",
-          "artist": "Liedan Solas",
-          "album": "Digital Beyond",
-          "duration_sec": 281.9,
-          "duration_fmt": "4:41",
-          "bitrate_kbps": 212,
-          "rel_path": "Digital Beyond/Sweetest Devotion.mp3",
           "comment": "www.atomichamsters.com"
         }
       ]
