@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'Sweetest Devotion': {
       vid: 'Kd366oT6qIo',
-      title: 'Human Seas | Melodic Drum & Bass / Cinematic Animation',
+      title: 'Human Seas | Melodic Drum & Bass (Official AI Music Video)',
       desc: 'From the Human Seas release • Official Melodic Drum & Bass showcase.',
       tag: 'HUMAN SEAS • MELODIC DNB'
     }
