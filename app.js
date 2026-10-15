@@ -85,6 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Human Seas | Melodic Drum & Bass (Official AI Music Video)',
       desc: 'From the Human Seas release • Official Melodic Drum & Bass showcase.',
       tag: 'HUMAN SEAS • MELODIC DNB'
+    },
+    'Glorious Mess': {
+      vid: 'lzXfbIYA824',
+      title: 'Glorious Mess | Official Motion Comic Music Video',
+      desc: '"I got a thrift store dress and a billion-dollar walk... Yeah, I\'m a glorious mess, I\'m a beautiful sham, but I wear it well!"',
+      tag: 'MOTION COMIC • ALT POP'
     }
   };
 
