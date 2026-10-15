@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'HUMAN SEAS • MELODIC DNB'
     },
     'Glorious Mess': {
-      vid: 'lzXfbIYA824',
+      vid: 'xt3IB9Q81_0',
       title: 'Glorious Mess | Official Motion Comic Music Video',
       desc: '"I got a thrift store dress and a billion-dollar walk... Yeah, I\'m a glorious mess, I\'m a beautiful sham, but I wear it well!"',
       tag: 'MOTION COMIC • ALT POP'
